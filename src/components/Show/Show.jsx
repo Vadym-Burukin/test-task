@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Show = () => {
   return (
     <div>
-      Show
+      Show Page
       <Link to="episodes/1">Episode 1</Link>
     </div>
   );

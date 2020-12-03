@@ -89,7 +89,8 @@
       "npm run format",
       "npm run lint:fix",
       "git add"
-    ]
+    ],
+    "*.js": "eslint --cache --fix"
   },
   "eslintConfig": {
     "extends": [
