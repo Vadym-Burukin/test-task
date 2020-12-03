@@ -5,5 +5,7 @@
   "header.navigation.webChannels": "Web Channels",
   "header.navigation.articles": "Articles",
   "header.navigation.schedule": "Schedule",
-  "header.navigation.calendar": "Calendar"
+  "header.navigation.calendar": "Calendar",
+
+  "episode.back": "Back"
 }

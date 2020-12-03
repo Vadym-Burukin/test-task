@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb", "prettier", "plugin:react-hooks/recommended"],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
@@ -9,9 +9,17 @@
         "devDependencies": true
       }
     ]
+    // "import/resolver": {
+    //   "node": {
+    //     "extensions": [".js", ".jsx", ".ts", ".tsx"]
+    //   }
+    // }
   },
   "env": {
     "browser": true,
     "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
   }
 }
