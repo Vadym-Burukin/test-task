@@ -6,14 +6,14 @@ import { Provider } from 'react-redux';
 import Layout from './components/Layout';
 import Show from './components/Show';
 import Routes from './components/Routing/Routes';
-import English from './lang/en-US.json';
+import messages from './lang/en-US.json';
 import store from './store';
 
 import './App.scss';
 
 function App() {
   return (
-    <IntlProvider locale="en-US" messages={English}>
+    <IntlProvider locale="en-US" messages={messages}>
       <Provider store={store}>
         <Layout>
           <div className="App">

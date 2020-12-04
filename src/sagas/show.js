@@ -11,10 +11,10 @@ export function* getShowSaga() {
     // eslint-disable-next-line no-underscore-dangle
     data._embedded.episodes.forEach((episode) => {
       episodes[episode.id] = {
-        id: episode.id,
+        key: episode.id,
         title: episode.name,
-        description: episode.summary,
-        coverImage: episode.image?.medium,
+        season: episode.season,
+        airdate: episode.airdate,
       };
     });
     const payload = {

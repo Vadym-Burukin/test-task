@@ -2,22 +2,23 @@
   "extends": ["airbnb", "prettier", "plugin:react-hooks/recommended"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": ["error"],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "import/no-extraneous-dependencies": [
       "error",
       {
         "devDependencies": true
       }
     ]
-    // "import/resolver": {
-    //   "node": {
-    //     "extensions": [".js", ".jsx", ".ts", ".tsx"]
-    //   }
-    // }
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "parserOptions": {
     "ecmaVersion": 2020
