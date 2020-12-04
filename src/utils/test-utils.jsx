@@ -7,8 +7,8 @@ import { render } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-import store from '../store';
-import messages from '../lang/en-US.json';
+import messages from 'lang/en-US.json';
+import store from 'state/store';
 
 const customRender = (ui, { history = createMemoryHistory(), ...options } = {}) => {
   const AllTheProviders = ({ children }) => {

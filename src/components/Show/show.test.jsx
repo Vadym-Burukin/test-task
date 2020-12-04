@@ -2,7 +2,7 @@
 import React from 'react';
 import { createMemoryHistory } from 'history';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, render, screen } from '../../utils/test-utils';
+import { fireEvent, render, screen } from 'utils/test-utils';
 
 import Show from './Show';
 import mockedResponse from './__mocks__/mocks';

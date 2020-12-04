@@ -1,5 +1,5 @@
-import reducer from './show';
-import * as actionTypes from '../actions/actionTypes';
+import reducer from '../showReducer';
+import * as actionTypes from '../../actionTypes';
 
 const initialState = {
   id: '',
@@ -8,6 +8,7 @@ const initialState = {
   coverImage: null,
   episodes: [],
   loading: false,
+  error: null,
 };
 
 describe('show reducer', () => {
@@ -25,6 +26,7 @@ describe('show reducer', () => {
           description: 'test',
           coverImage: 'http//:test',
           episodes: [],
+          error: null,
         },
       })
     ).toEqual({
@@ -34,6 +36,7 @@ describe('show reducer', () => {
       coverImage: 'http//:test',
       episodes: [],
       loading: false,
+      error: null,
     });
   });
 
@@ -41,15 +44,20 @@ describe('show reducer', () => {
     expect(reducer(undefined, { type: actionTypes.GET_SHOW_START })).toEqual({
       ...initialState,
       loading: true,
+      error: null,
     });
   });
 
   it('should set loading state to false if data fetching failed', () => {
     expect(
-      reducer({ ...initialState, loading: true }, { type: actionTypes.GET_SHOW_FAIL })
+      reducer(
+        { ...initialState, loading: true },
+        { type: actionTypes.GET_SHOW_FAIL, error: { message: 'test' } }
+      )
     ).toEqual({
       ...initialState,
       loading: false,
+      error: { message: 'test' },
     });
   });
 });

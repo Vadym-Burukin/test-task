@@ -4,7 +4,7 @@ import {
   GET_EPISODE_SUCCESS,
   GET_EPISODE_FAIL,
   CLEAR_EPISODE_DATA,
-} from './actionTypes';
+} from '../actionTypes';
 
 export const getEpisodeInit = (episodeId) => ({
   type: GET_EPISODE_INIT,
@@ -20,8 +20,9 @@ export const getEpisodeSuccess = (payload) => ({
   payload,
 });
 
-export const getEpisodeFail = () => ({
+export const getEpisodeFail = (error) => ({
   type: GET_EPISODE_FAIL,
+  error,
 });
 
 export const clearEpisodeData = () => ({

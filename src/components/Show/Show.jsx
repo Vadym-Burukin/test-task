@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Spin } from 'antd';
 
-import { useGetShow } from '../../hooks';
+import { useGetShow } from 'hooks';
 import EpisodesTable from './EpisodesTable/EpisodesTable';
 import './styles.scss';
 

@@ -1,0 +1,5 @@
+{
+  "development": "http://api.tvmaze.com",
+  "test": "http://api.tvmaze.com",
+  "production": "http://api.tvmaze.com"
+}

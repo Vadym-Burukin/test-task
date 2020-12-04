@@ -1,9 +1,8 @@
-/* eslint-disable import/prefer-default-export */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { getEpisodeInit, clearEpisodeData } from '../actions/episode';
+import { getEpisodeInit, clearEpisodeData } from 'state/episode/episodeActions';
 
 export const useGetEpisode = () => {
   const dispatch = useDispatch();

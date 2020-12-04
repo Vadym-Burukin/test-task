@@ -1,11 +1,12 @@
-/* eslint-disable import/prefer-default-export */
 import { put } from 'redux-saga/effects';
-import { getShowStart, getShowSuccess, getShowFail } from '../actions/show';
+import sanitizeHtml from 'sanitize-html';
+import { baseUrl } from 'api/api-client';
+import { getShowStart, getShowSuccess, getShowFail } from 'state/show/showActions';
 
 export function* getShowSaga() {
   try {
     yield put(getShowStart());
-    const response = yield fetch('http://api.tvmaze.com/shows/6771?embed[]=episodes');
+    const response = yield fetch(`${baseUrl}/shows/6771?embed[]=episodes`);
     const data = yield response.json();
     const episodes = {};
     // eslint-disable-next-line no-underscore-dangle
@@ -20,12 +21,12 @@ export function* getShowSaga() {
     const payload = {
       id: data.id,
       title: data.name,
-      description: data.summary,
+      description: sanitizeHtml(data.summary) || data.name,
       coverImage: data.image.medium,
       episodes,
     };
     yield put(getShowSuccess(payload));
   } catch (error) {
-    yield put(getShowFail());
+    yield put(getShowFail(error));
   }
 }

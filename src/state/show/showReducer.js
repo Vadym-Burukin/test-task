@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/actionTypes';
+import * as actionTypes from 'state/actionTypes';
 
 const initialState = {
   id: '',
@@ -7,11 +7,13 @@ const initialState = {
   coverImage: null,
   episodes: [],
   loading: false,
+  error: null,
 };
 
 const getShowStart = (state) => ({
   ...state,
   loading: true,
+  error: null,
 });
 
 const getShowSuccess = (state, action) => ({
@@ -20,9 +22,10 @@ const getShowSuccess = (state, action) => ({
   loading: false,
 });
 
-const getShowFail = (state) => ({
+const getShowFail = (state, action) => ({
   ...state,
   loading: false,
+  error: action.error,
 });
 
 const reducer = (state = initialState, action) => {
@@ -32,7 +35,7 @@ const reducer = (state = initialState, action) => {
     case actionTypes.GET_SHOW_SUCCESS:
       return getShowSuccess(state, action);
     case actionTypes.GET_SHOW_FAIL:
-      return getShowFail(state);
+      return getShowFail(state, action);
     default:
       return state;
   }

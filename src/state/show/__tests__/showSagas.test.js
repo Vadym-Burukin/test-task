@@ -1,8 +1,8 @@
 import { runSaga } from 'redux-saga';
 import { waitFor } from '@testing-library/react';
 
-import { mockedResponse, payload } from './__mocks__/showMocks';
-import { getShowSaga } from './show';
+import { mockedResponse, payload } from '../__mocks__/showMocks';
+import { getShowSaga } from '../showSagas';
 
 describe('Show saga', () => {
   it('should call fetch and dispatch start and success action', async () => {

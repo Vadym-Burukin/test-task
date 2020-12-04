@@ -1,4 +1,4 @@
-import { GET_SHOW_START, GET_SHOW_INIT, GET_SHOW_SUCCESS, GET_SHOW_FAIL } from './actionTypes';
+import { GET_SHOW_START, GET_SHOW_INIT, GET_SHOW_SUCCESS, GET_SHOW_FAIL } from '../actionTypes';
 
 export const getShowInit = () => ({
   type: GET_SHOW_INIT,
@@ -13,6 +13,7 @@ export const getShowSuccess = (payload) => ({
   payload,
 });
 
-export const getShowFail = () => ({
+export const getShowFail = (error) => ({
   type: GET_SHOW_FAIL,
+  error,
 });

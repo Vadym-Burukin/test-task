@@ -1,10 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Button, Spin, Card } from 'antd';
 import { FormattedMessage } from 'react-intl';
 
-import { useGetEpisode } from '../../hooks';
+import { useGetEpisode } from 'hooks';
 
 const { Meta } = Card;
 
@@ -19,6 +18,8 @@ const Episode = () => {
     );
   }
 
+  const coverImage = episode.coverImage || './download.png';
+
   return (
     <div>
       <Link to="/">
@@ -29,7 +30,7 @@ const Episode = () => {
       <Card
         hoverable
         style={{ width: 240, marginTop: 30, marginBottom: 30 }}
-        cover={<img alt="episode cover" src={episode.coverImage} data-testid="cover-image" />}
+        cover={<img alt="episode cover" src={coverImage} data-testid="cover-image" />}
       >
         <Meta title={episode.title} />
       </Card>

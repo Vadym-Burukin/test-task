@@ -1,9 +1,8 @@
-/* eslint-disable import/prefer-default-export */
 import { takeEvery } from 'redux-saga/effects';
-import * as actionsTypes from '../actions/actionTypes';
+import * as actionsTypes from 'state/actionTypes';
 
-import { getEpisodeSaga } from './episode';
-import { getShowSaga } from './show';
+import { getEpisodeSaga } from './episode/episodeSagas';
+import { getShowSaga } from './show/showSagas';
 
 export function* watchGetEpisode() {
   yield takeEvery(actionsTypes.GET_EPISODE_INIT, getEpisodeSaga);
