@@ -26,7 +26,7 @@ const Show = () => {
           style={{ width: 240 }}
           cover={<img alt="show cover" src={show.coverImage} data-testid="cover-image" />}
         >
-          <Meta title={show.title} />
+          <Meta className="image-cover-title" title={show.title} />
         </Card>
         {/* eslint-disable-next-line react/no-danger */}
         <div className="show-description" dangerouslySetInnerHTML={{ __html: show.description }} />

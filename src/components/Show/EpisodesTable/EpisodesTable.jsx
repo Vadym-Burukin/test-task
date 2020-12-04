@@ -28,7 +28,7 @@ const EpisodesTable = ({ episodes }) => {
 };
 
 EpisodesTable.propTypes = {
-  episodes: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.array]).isRequired,
+  episodes: PropTypes.PropTypes.objectOf(PropTypes.shape()).isRequired,
 };
 
 export default EpisodesTable;

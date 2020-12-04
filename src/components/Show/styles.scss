@@ -5,6 +5,24 @@
   margin-bottom: 30px;
 }
 
+.image-cover-title {
+  text-align: center;
+}
+
 .show-description {
   max-width: 70%;
+}
+
+.ant-table-pagination.ant-pagination {
+  justify-content: center;
+}
+
+@media screen and (max-width: 425px) {
+  .show-header {
+    flex-direction: column;
+  }
+  .show-description {
+    max-width: 100%;
+    padding: 24px 10px 0;
+  }
 }

@@ -5,6 +5,57 @@
   margin: 16px 24px 16px 0;
   float: left;
 }
+.site-layout {
+  padding: 14px 36px;
+  margin-top: 64px;
+}
 .site-layout .site-layout-background {
   background: #fff;
+}
+
+.header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.footer {
+  text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+  .site-layout {
+    padding: 10px 0;
+  }
+  .logo-wrap {
+    display: flex;
+    justify-content: center;
+    clear: both;
+  }
+  .ant-menu.ant-menu-dark.ant-menu-root.ant-menu-horizontal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 64px;
+    span {
+      color: transparent;
+      display: block;
+      &::after,
+      &::before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        width: 26px;
+        height: 24px;
+        border-top: 2px solid #fff;
+      }
+      &::before {
+        top: 22px;
+        border-bottom: 2px solid #fff;
+      }
+      &::after {
+        top: 33px;
+      }
+    }
+  }
 }

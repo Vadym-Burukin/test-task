@@ -10,8 +10,8 @@ const { Header, Content, Footer } = Layout;
 const PageLayout = ({ children }) => {
   return (
     <Layout>
-      <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-        <div>
+      <Header className="header">
+        <div className="logo-wrap">
           <img
             className="logo"
             src="http://static.tvmaze.com/images/tvm-header-logo.png"
@@ -42,12 +42,10 @@ const PageLayout = ({ children }) => {
           </Menu.Item>
         </Menu>
       </Header>
-      <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-        <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
-          {children}
-        </div>
+      <Content className="site-layout">
+        <div className="site-layout-background">{children}</div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>2020 Created by Vadym Burukin</Footer>
+      <Footer className="footer">2020 Created by Vadym Burukin</Footer>
     </Layout>
   );
 };
